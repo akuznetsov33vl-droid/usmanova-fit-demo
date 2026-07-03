@@ -7,8 +7,8 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
 
-/* версия ассетов — меняем при правках CSS/JS, чтобы сбросить кэш браузера */
-const VER = '4';
+/* версия ассетов — меняем при правках CSS/JS/картинок, чтобы сбросить кэш браузера */
+const VER = '5';
 
 /* ---------- реквизиты ---------- */
 const ORG = {
@@ -450,7 +450,7 @@ function indexPage(){
     </div>
     <div class="hero-visual">
       <div class="online"><span class="dot"></span><div>3 696 онлайн<small>тренируются сейчас</small></div></div>
-      <img src="assets/img/hero.png" alt="Катя Усманова" width="975" height="1134">
+      <img src="assets/img/hero.png?v=${VER}" alt="Катя Усманова" width="975" height="1134">
     </div>
   </div>
 </section>
