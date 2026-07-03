@@ -1,5 +1,7 @@
-.chrome/
+.chrome*/
+v-*.png
 shot-*.png
 s-*.png
+live-*.png
 raw.html
 method_raw.html
