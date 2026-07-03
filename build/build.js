@@ -8,7 +8,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 
 /* версия ассетов — меняем при правках CSS/JS/картинок, чтобы сбросить кэш браузера */
-const VER = '5';
+const VER = '6';
 
 /* ---------- реквизиты ---------- */
 const ORG = {
