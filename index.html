@@ -3,244 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#e6007a">
-<title>USMANOVA FIT — Фитнес с Катей Усмановой</title>
-<meta name="description" content="Приведите тело в форму с чемпионкой Катей Усмановой — без диет, голода и запретов. Выберите программу под свою цель.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#f66297">
+<title>Фитнес с Катей Усмановой — похудение, фигура, зал, форма после родов</title>
+<meta name="description" content="Приведите тело в форму с чемпионкой Катей Усмановой — без диет, голода и запретов, с пользой для здоровья.">
 <style>
+  @font-face{font-family:'Gilroy';src:url('assets/fonts/g3.woff') format('woff');font-weight:300;font-display:swap}
+  @font-face{font-family:'Gilroy';src:url('assets/fonts/g1.woff') format('woff');font-weight:400;font-display:swap}
+  @font-face{font-family:'Gilroy';src:url('assets/fonts/g2.woff') format('woff');font-weight:600;font-display:swap}
+
   :root{
-    --pink:#e6007a;
-    --pink-2:#ff4d94;
-    --ink:#141118;
-    --muted:#6b6572;
-    --line:#efe9ef;
+    --pink:#f66297;
+    --pink-2:#ff63ae;
+    --blue:#7ea2f3;
+    --ink:#1a1a1a;
+    --muted:#8c8c8c;
     --bg:#ffffff;
-    --soft:#faf6fa;
-    --radius:20px;
-    --shadow:0 18px 50px -20px rgba(230,0,122,.35);
-    --maxw:1180px;
+    --gray:#f3f3f3;
+    --line:#ececec;
+    --maxw:1200px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{
-    font-family:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-    color:var(--ink);background:var(--bg);line-height:1.5;
-    overflow-x:hidden;
-  }
+  body{font-family:'Gilroy',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.3;overflow-x:hidden;font-weight:400}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   button{font-family:inherit;cursor:pointer;border:none;background:none}
-  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
-  .accent{color:var(--pink)}
+  ::selection{background:var(--pink);color:#fff}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
   /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;
-    font-weight:700;font-size:16px;line-height:1;
-    padding:17px 30px;border-radius:100px;transition:.2s ease;
-    white-space:nowrap;text-align:center;
-  }
-  .btn-primary{
-    color:#fff;background:linear-gradient(135deg,var(--pink),var(--pink-2));
-    box-shadow:var(--shadow);
-  }
-  .btn-primary:hover{transform:translateY(-2px);filter:saturate(1.1)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:inherit;font-weight:600;font-size:17px;line-height:1;
+    padding:20px 40px;border-radius:100px;transition:.22s ease;white-space:nowrap;text-align:center}
+  .btn-primary{color:#fff;background:var(--pink);box-shadow:0 14px 30px -10px rgba(246,98,151,.6)}
+  .btn-primary:hover{background:var(--pink-2);transform:translateY(-2px)}
   .btn-primary:active{transform:translateY(0)}
-  .btn-ghost{border:2px solid var(--line);color:var(--ink);background:#fff}
-  .btn-ghost:hover{border-color:var(--pink);color:var(--pink)}
+  .btn-light{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-light:hover{border-color:var(--pink);color:var(--pink)}
   .btn-block{width:100%}
 
   /* ---------- Header ---------- */
-  header{
-    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);
-    backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
-  }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-  .logo{font-weight:900;letter-spacing:.06em;font-size:20px}
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-weight:600;font-size:22px;letter-spacing:.02em}
   .logo b{color:var(--pink)}
-  .nav-links{display:flex;gap:28px;font-weight:600;font-size:15px}
-  .nav-links a{color:var(--muted);transition:.15s}
-  .nav-links a:hover{color:var(--ink)}
-  .nav-cta{display:flex;align-items:center;gap:14px}
-  .nav .btn{padding:12px 22px;font-size:14px}
+  .nav-links{display:flex;gap:34px;font-weight:400;font-size:16px}
+  .nav-links a{color:var(--ink);transition:.15s}
+  .nav-links a:hover{color:var(--pink)}
+  .nav .btn{padding:13px 26px;font-size:15px}
   .burger{display:none;flex-direction:column;gap:5px;padding:8px}
-  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+  .burger span{width:26px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
   .mobile-menu{display:none;border-top:1px solid var(--line);background:#fff}
-  .mobile-menu a{display:block;padding:15px 20px;font-weight:600;border-bottom:1px solid var(--line);color:var(--muted)}
+  .mobile-menu a{display:block;padding:16px 24px;font-size:16px;border-bottom:1px solid var(--line)}
 
   /* ---------- Hero ---------- */
-  .hero{position:relative;padding:70px 0 90px;background:
-    radial-gradient(1000px 500px at 85% -5%,rgba(255,77,148,.16),transparent 60%),
-    radial-gradient(700px 400px at 0% 100%,rgba(230,0,122,.08),transparent 55%),
-    var(--soft);
-    overflow:hidden;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
-  .badge{
-    display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);
-    padding:8px 16px;border-radius:100px;font-weight:600;font-size:13px;color:var(--muted);
-    box-shadow:0 6px 20px -12px rgba(0,0,0,.2);margin-bottom:22px;
-  }
-  .badge .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
-  .hero h1{font-size:clamp(30px,5vw,52px);line-height:1.06;font-weight:800;letter-spacing:-.02em}
-  .hero h1 span{background:linear-gradient(120deg,var(--pink),var(--pink-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p.lead{font-size:clamp(16px,2.2vw,19px);color:var(--muted);margin:22px 0 14px;max-width:520px}
-  .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
-  .tag{background:#fff;border:1px solid var(--line);padding:8px 15px;border-radius:100px;font-size:14px;font-weight:600}
-  .tag::before{content:"✓";color:var(--pink);font-weight:800;margin-right:7px}
-  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-note{margin-top:18px;font-size:13px;color:var(--muted)}
-  .hero-stats{display:flex;gap:30px;margin-top:36px;flex-wrap:wrap}
-  .hero-stats .n{font-size:28px;font-weight:800;color:var(--ink)}
-  .hero-stats .l{font-size:13px;color:var(--muted);max-width:150px}
-  .hero-visual{position:relative}
-  .hero-card{
-    position:relative;border-radius:26px;overflow:hidden;aspect-ratio:4/5;
-    background:linear-gradient(160deg,#ffd9ea,#ffb3d4 55%,#ff8cbf);
-    box-shadow:0 40px 80px -30px rgba(230,0,122,.5);
-  }
-  .hero-card::after{content:"";position:absolute;inset:0;background:
-    radial-gradient(circle at 30% 20%,rgba(255,255,255,.5),transparent 40%);}
-  .hero-card .kate{
-    position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-    font-size:190px;line-height:1;filter:drop-shadow(0 20px 30px rgba(0,0,0,.18));
-  }
-  .float{
-    position:absolute;background:#fff;border-radius:16px;padding:14px 16px;
-    box-shadow:0 20px 40px -18px rgba(0,0,0,.25);display:flex;align-items:center;gap:12px;
-    font-weight:700;font-size:14px;
-  }
-  .float .ic{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:var(--soft)}
-  .float small{display:block;color:var(--muted);font-weight:500;font-size:12px}
-  .float-1{top:22px;left:-18px}
-  .float-2{bottom:34px;right:-16px}
+  .hero{position:relative;background:var(--gray);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;min-height:620px;padding:40px 0}
+  .hero-copy{position:relative;z-index:2;padding:30px 0}
+  .hero h1{font-size:clamp(30px,4.4vw,52px);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+  .hero h1 b{color:var(--pink);font-weight:600}
+  .hero .sub{margin-top:26px;display:flex;flex-direction:column;gap:6px}
+  .hero .sub span{font-size:clamp(17px,2vw,22px);font-weight:600}
+  .hero .sub span.a{color:var(--pink)}
+  .hero .sub span.b{color:var(--blue)}
+  .hero p.lead{font-size:clamp(15px,1.7vw,18px);color:#555;margin:24px 0 34px;max-width:440px;font-weight:400;line-height:1.45}
+  .hero .btn{font-size:18px}
+  .hero-note{margin-top:16px;font-size:13px;color:var(--muted)}
+  .hero-badges{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
+  .hero-badges .n{font-size:26px;font-weight:600;color:var(--ink)}
+  .hero-badges .l{font-size:13px;color:var(--muted);margin-top:3px;max-width:150px}
+  .hero-visual{position:relative;align-self:end;justify-self:center;height:100%;display:flex;align-items:flex-end}
+  .hero-visual::before{content:"";position:absolute;bottom:6%;left:50%;transform:translateX(-50%);
+    width:118%;height:78%;border-radius:50%;
+    background:radial-gradient(closest-side,rgba(246,98,151,.32),rgba(126,162,243,.14) 60%,transparent 72%);z-index:0}
+  .hero-visual img{position:relative;z-index:1;max-height:600px;width:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.14))}
+  .online{position:absolute;top:34px;right:6px;z-index:2;background:#fff;border-radius:14px;padding:12px 16px;
+    box-shadow:0 16px 34px -14px rgba(0,0,0,.25);display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+  .online .dot{width:9px;height:9px;border-radius:50%;background:#4cd964;box-shadow:0 0 0 4px rgba(76,217,100,.2)}
+  .online small{display:block;color:var(--muted);font-weight:400;font-size:12px}
 
   /* ---------- Section base ---------- */
-  section.block{padding:80px 0}
-  .head{text-align:center;max-width:640px;margin:0 auto 46px}
-  .eyebrow{color:var(--pink);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;margin-bottom:12px}
-  .head h2{font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.12;letter-spacing:-.02em}
-  .head p{color:var(--muted);margin-top:14px;font-size:17px}
+  section.block{padding:84px 0}
+  .head{max-width:760px;margin:0 auto 44px;text-align:center}
+  .eyebrow{display:inline-block;color:var(--pink);font-weight:600;font-size:15px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+  .head h2{font-size:clamp(28px,3.6vw,44px);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  .head p{color:var(--muted);margin-top:16px;font-size:18px;font-weight:400}
 
   /* ---------- Programs ---------- */
-  .tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:38px}
-  .tab{padding:11px 20px;border-radius:100px;font-weight:600;font-size:14px;background:var(--soft);color:var(--muted);border:1px solid transparent;transition:.15s}
-  .tab.active{background:var(--ink);color:#fff}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .card{
-    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;
-    display:flex;flex-direction:column;transition:.22s ease;
-  }
-  .card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(20,17,24,.28);border-color:transparent}
-  .card-media{aspect-ratio:16/10;position:relative;display:grid;place-items:center;font-size:60px}
-  .card-media::before{content:"";position:absolute;inset:0;opacity:.9}
-  .card:nth-child(1) .card-media::before{background:linear-gradient(150deg,#ffe0ef,#ff9dc7)}
-  .card:nth-child(2) .card-media::before{background:linear-gradient(150deg,#e5e0ff,#a99dff)}
-  .card:nth-child(3) .card-media::before{background:linear-gradient(150deg,#ffe9d6,#ffb877)}
-  .card:nth-child(4) .card-media::before{background:linear-gradient(150deg,#d6f5e6,#78e0b0)}
-  .card:nth-child(5) .card-media::before{background:linear-gradient(150deg,#ffd9d9,#ff9d9d)}
-  .card:nth-child(6) .card-media::before{background:linear-gradient(150deg,#d9eeff,#7db8ff)}
-  .card-media span{position:relative;z-index:1}
-  .card-flag{position:absolute;top:14px;left:14px;z-index:2;background:var(--ink);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;padding:6px 12px;border-radius:100px}
-  .card-flag.hot{background:linear-gradient(135deg,var(--pink),var(--pink-2))}
-  .card-body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
-  .card-body h3{font-size:19px;font-weight:800}
-  .card-body .desc{color:var(--muted);font-size:15px;flex:1}
-  .card-meta{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
-  .price{font-weight:800;font-size:18px}
-  .price s{color:var(--muted);font-weight:500;font-size:14px;margin-right:6px}
-  .card .btn{padding:14px 18px;font-size:15px;margin-top:6px}
+  .cat-title{font-size:clamp(24px,3vw,34px);font-weight:600;margin-bottom:30px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:var(--gray);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;transition:.25s ease}
+  .card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(0,0,0,.22)}
+  .card-media{position:relative;height:290px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:#f3f3f3}
+  .card-media::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(120% 90% at 50% 100%,rgba(246,98,151,.10),transparent 70%)}
+  .card-media img{position:relative;z-index:1;height:100%;width:auto;object-fit:contain}
+  .card-flag{position:absolute;top:16px;left:16px;z-index:2;background:var(--ink);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;padding:7px 14px;border-radius:100px}
+  .card-flag.hot{background:var(--pink)}
+  .card-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1;background:#fff;border:1px solid var(--line);border-top:none;border-radius:0 0 28px 28px;margin:-1px}
+  .card-cat{color:var(--muted);font-size:15px;font-weight:400;margin-bottom:2px}
+  .card-name{font-size:23px;font-weight:600;margin-bottom:12px;line-height:1.1}
+  .card-desc{color:#666;font-size:15px;flex:1;line-height:1.45;font-weight:400}
+  .card-desc b{color:var(--ink);font-weight:600}
+  .card .btn{margin-top:20px;padding:15px 22px;font-size:15px}
 
   /* ---------- Lead form ---------- */
-  .cta-section{padding:80px 0}
-  .cta-box{
-    position:relative;overflow:hidden;border-radius:30px;
-    background:linear-gradient(135deg,#1c1420,#2a1830 60%,#3a1030);
-    color:#fff;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
-  }
-  .cta-box::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;
-    background:radial-gradient(circle,rgba(255,77,148,.45),transparent 65%);top:-120px;right:-80px}
-  .cta-info{position:relative;z-index:1}
-  .cta-info h2{font-size:clamp(26px,3.5vw,38px);font-weight:800;line-height:1.12;letter-spacing:-.02em}
-  .cta-info p{color:rgba(255,255,255,.72);margin-top:16px;font-size:17px;max-width:420px}
-  .cta-list{margin-top:26px;display:flex;flex-direction:column;gap:14px}
-  .cta-list li{list-style:none;display:flex;align-items:center;gap:12px;font-weight:600}
-  .cta-list .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:rgba(255,255,255,.1);color:var(--pink-2)}
-  .form-card{position:relative;z-index:1;background:#fff;border-radius:22px;padding:32px;color:var(--ink)}
-  .form-card h3{font-size:22px;font-weight:800;margin-bottom:6px}
-  .form-card .sub{color:var(--muted);font-size:14px;margin-bottom:22px}
+  .lead{background:var(--gray)}
+  .lead-box{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+    background:#fff;border-radius:36px;padding:56px;box-shadow:0 40px 90px -50px rgba(0,0,0,.3)}
+  .lead-info h2{font-size:clamp(28px,3.4vw,42px);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  .lead-info h2 b{color:var(--pink);font-weight:600}
+  .lead-info p{color:var(--muted);margin-top:18px;font-size:18px;max-width:440px;font-weight:400;line-height:1.45}
+  .lead-list{margin-top:28px;display:flex;flex-direction:column;gap:16px}
+  .lead-list li{list-style:none;display:flex;align-items:center;gap:14px;font-weight:600;font-size:16px}
+  .lead-list .ic{width:34px;height:34px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;background:rgba(246,98,151,.12);color:var(--pink);font-size:16px}
+  .form-card{background:var(--gray);border-radius:24px;padding:36px}
+  .form-card h3{font-size:24px;font-weight:600;margin-bottom:6px}
+  .form-card .fsub{color:var(--muted);font-size:15px;margin-bottom:24px;font-weight:400}
   .field{margin-bottom:16px}
-  .field label{display:block;font-weight:600;font-size:13px;margin-bottom:7px}
-  .field input,.field select{
-    width:100%;padding:15px 16px;border:1.5px solid var(--line);border-radius:14px;
-    font-family:inherit;font-size:16px;background:var(--soft);transition:.15s;color:var(--ink);
-  }
-  .field input:focus,.field select:focus{outline:none;border-color:var(--pink);background:#fff}
-  .field input.err{border-color:#ef4444;background:#fef2f2}
-  .field .msg{color:#ef4444;font-size:12px;margin-top:6px;font-weight:600;display:none}
+  .field label{display:block;font-weight:600;font-size:14px;margin-bottom:8px}
+  .field input,.field select{width:100%;padding:17px 18px;border:1.5px solid transparent;border-radius:14px;
+    font-family:inherit;font-size:16px;font-weight:400;background:#fff;transition:.15s;color:var(--ink)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--pink)}
+  .field input.err{border-color:#ff4d4d;background:#fff5f5}
+  .field .msg{color:#ff4d4d;font-size:13px;margin-top:6px;font-weight:600;display:none}
   .field.invalid .msg{display:block}
-  .consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--muted);margin:6px 0 20px}
-  .consent input{width:18px;height:18px;margin-top:1px;accent-color:var(--pink);flex-shrink:0}
-  .form-ok{text-align:center;padding:20px 6px;display:none}
-  .form-ok .check{width:74px;height:74px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;
-    background:linear-gradient(135deg,var(--pink),var(--pink-2));color:#fff;font-size:38px;
-    animation:pop .4s ease}
+  .consent{display:flex;align-items:flex-start;gap:11px;font-size:13px;color:var(--muted);margin:8px 0 22px;font-weight:400;line-height:1.4}
+  .consent input{width:19px;height:19px;margin-top:1px;accent-color:var(--pink);flex-shrink:0}
+  .form-ok{display:none;text-align:center;padding:22px 6px}
+  .form-ok .check{width:78px;height:78px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;
+    background:var(--pink);color:#fff;font-size:40px;animation:pop .4s ease}
   @keyframes pop{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
-  .form-ok h3{font-size:22px;margin-bottom:8px}
-  .form-ok p{color:var(--muted);font-size:15px}
+  .form-ok h3{font-size:24px;margin-bottom:10px}
+  .form-ok p{color:var(--muted);font-size:16px;font-weight:400;line-height:1.45}
 
   /* ---------- Footer ---------- */
-  footer{background:var(--soft);border-top:1px solid var(--line);padding:40px 0;text-align:center;color:var(--muted);font-size:14px}
-  footer .logo{font-size:18px;margin-bottom:10px;color:var(--ink)}
-  footer .fnav{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+  footer{background:#fff;border-top:1px solid var(--line);padding:44px 0;text-align:center;color:var(--muted);font-size:14px;font-weight:400}
+  footer .logo{font-size:20px;margin-bottom:12px;color:var(--ink)}
+  footer .fnav{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin:16px 0}
   footer .fnav a:hover{color:var(--pink)}
 
   /* ---------- Modal ---------- */
   .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
   .modal.open{display:flex}
-  .modal-bg{position:absolute;inset:0;background:rgba(20,17,24,.55);backdrop-filter:blur(4px);animation:fade .2s}
+  .modal-bg{position:absolute;inset:0;background:rgba(26,26,26,.55);backdrop-filter:blur(4px);animation:fade .2s}
   @keyframes fade{from{opacity:0}to{opacity:1}}
-  .modal-card{
-    position:relative;background:#fff;border-radius:24px;max-width:440px;width:100%;
-    padding:34px;max-height:92vh;overflow:auto;animation:rise .28s cubic-bezier(.2,.9,.3,1)
-  }
+  .modal-card{position:relative;background:#fff;border-radius:28px;max-width:460px;width:100%;overflow:hidden;max-height:94vh;
+    animation:rise .3s cubic-bezier(.2,.9,.3,1)}
   @keyframes rise{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
-  .modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:var(--soft);font-size:18px;color:var(--muted);display:grid;place-items:center;transition:.15s}
-  .modal-close:hover{background:var(--line)}
-  .modal-emoji{font-size:48px;margin-bottom:10px}
-  .modal-card h3{font-size:23px;font-weight:800;margin-bottom:6px}
-  .modal-card .mprice{font-weight:800;font-size:20px;color:var(--pink);margin:4px 0 14px}
-  .modal-card .mdesc{color:var(--muted);margin-bottom:20px;font-size:15px}
+  .modal-media{height:230px;display:flex;align-items:flex-end;justify-content:center;position:relative;background:#f3f3f3}
+  .modal-media::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 100%,rgba(246,98,151,.12),transparent 70%)}
+  .modal-media img{position:relative;z-index:1;height:100%;width:auto}
+  .modal-body{padding:28px 32px 34px}
+  .modal-close{position:absolute;top:16px;right:16px;z-index:3;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);font-size:18px;color:var(--ink);display:grid;place-items:center;transition:.15s}
+  .modal-close:hover{background:#fff;color:var(--pink)}
+  .modal-body .mcat{color:var(--muted);font-size:15px}
+  .modal-body h3{font-size:26px;font-weight:600;margin:2px 0 12px}
+  .modal-body .mdesc{color:#666;margin-bottom:22px;font-size:16px;line-height:1.5;font-weight:400}
 
   /* ---------- Responsive ---------- */
-  @media(max-width:960px){
+  @media(max-width:1000px){
     .cards{grid-template-columns:repeat(2,1fr)}
-    .cta-box{grid-template-columns:1fr;padding:36px}
-    .cta-box::before{width:300px;height:300px}
+    .lead-box{grid-template-columns:1fr;gap:36px;padding:40px}
   }
-  @media(max-width:820px){
-    .nav-links,.nav-cta .btn{display:none}
+  @media(max-width:860px){
+    .nav-links,.nav .btn{display:none}
     .burger{display:flex}
-    .hero-grid{grid-template-columns:1fr;gap:36px}
-    .hero-visual{max-width:360px;margin:0 auto;width:100%}
-    .hero{padding:44px 0 60px}
+    .hero-grid{grid-template-columns:1fr;min-height:0;gap:0;text-align:center;padding:36px 0 0}
+    .hero-copy{padding:20px 0 0}
+    .hero p.lead{margin-left:auto;margin-right:auto}
+    .hero .sub{align-items:center}
+    .hero-badges{justify-content:center}
+    .hero-visual{margin-top:20px}
+    .hero-visual img{max-height:440px}
+    .online{right:0}
     section.block{padding:56px 0}
-    .cta-section{padding:56px 0}
   }
   @media(max-width:560px){
-    .wrap{padding:0 16px}
-    .cards{grid-template-columns:1fr}
-    .hero-actions{flex-direction:column}
-    .hero-actions .btn{width:100%}
-    .hero-stats{gap:22px}
-    .cta-box{padding:26px}
-    .form-card{padding:24px}
-    .modal-card{padding:26px}
-    .hero-card .kate{font-size:150px}
-    .float{font-size:13px;padding:11px 13px}
-    .float-1{left:-6px}
-    .float-2{right:-6px}
+    .wrap{padding:0 18px}
+    .cards{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+    .hero .btn,.hero-actions .btn{width:100%}
+    .hero-badges{gap:20px}
+    .lead-box{padding:26px}
+    .form-card{padding:26px}
+    .btn{padding:18px 30px}
   }
 </style>
 </head>
@@ -252,17 +197,15 @@
     <a href="#" class="logo">USMANOVA<b>FIT</b></a>
     <nav class="nav-links">
       <a href="#programs">Программы</a>
-      <a href="#programs">Результаты</a>
+      <a href="#programs">Тренировки</a>
       <a href="#lead">Контакты</a>
     </nav>
-    <div class="nav-cta">
-      <a href="#lead" class="btn btn-primary" data-scroll>Выбрать программу</a>
-      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
-    </div>
+    <a href="#programs" class="btn btn-primary" data-scroll>Выбрать программу</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#programs" data-close-menu>Программы</a>
-    <a href="#programs" data-close-menu>Результаты</a>
+    <a href="#programs" data-close-menu>Тренировки</a>
     <a href="#lead" data-close-menu>Контакты</a>
   </div>
 </header>
@@ -271,29 +214,23 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="badge"><span class="dot"></span> Сейчас тренируются 3 696 девушек</div>
-      <h1>Фитнес с <span>Катей Усмановой</span> — тело в форме без диет и запретов</h1>
-      <p class="lead">Похудение, подтянутая фигура, восстановление после родов — с чемпионкой фитнес-бикини и пользой для здоровья.</p>
-      <div class="hero-tags">
-        <span class="tag">Без голода</span>
-        <span class="tag">Дома и в зале</span>
-        <span class="tag">Первый результат за 6 дней</span>
+      <h1>Приведите тело в форму с&nbsp;чемпионкой <b>Катей&nbsp;Усмановой</b></h1>
+      <div class="sub">
+        <span class="a">без диет, голода и запретов</span>
+        <span class="b">с пользой для здоровья</span>
       </div>
-      <div class="hero-actions">
-        <a href="#programs" class="btn btn-primary" data-scroll>Выбрать программу</a>
-        <a href="#lead" class="btn btn-ghost" data-scroll>Подобрать бесплатно</a>
-      </div>
+      <p class="lead">Похудеть, подтянуть попу и живот, набрать форму в зале, восстановиться после родов — тренировки и питание под вашу цель.</p>
+      <a href="#programs" class="btn btn-primary" data-scroll>Выбрать программу</a>
       <p class="hero-note">Для корректной работы сайта отключите VPN</p>
-      <div class="hero-stats">
+      <div class="hero-badges">
         <div><div class="n">580 000+</div><div class="l">участниц уже с Катей</div></div>
         <div><div class="n">15 лет</div><div class="l">опыта тренера</div></div>
-        <div><div class="n">4–6 кг</div><div class="l">в среднем за 1-й месяц</div></div>
+        <div><div class="n">4–6 кг</div><div class="l">в среднем за первый месяц</div></div>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-card"><div class="kate">🏋️‍♀️</div></div>
-      <div class="float float-1"><div class="ic">🏆</div><div>Чемпионка России<small>фитнес-бикини</small></div></div>
-      <div class="float float-2"><div class="ic">🔥</div><div>−20 кг за 100 дней<small>личный результат</small></div></div>
+      <div class="online"><span class="dot"></span><div>3 696 онлайн<small>тренируются сейчас</small></div></div>
+      <img src="assets/img/hero.png" alt="Катя Усманова" width="975" height="1134">
     </div>
   </div>
 </section>
@@ -302,28 +239,23 @@
 <section class="block" id="programs">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Тренировки дома</div>
+      <div class="eyebrow">Программы</div>
       <h2>Выберите программу под свою цель</h2>
-      <p>Каждая программа — это техника, регулярность и видимый результат. Начните с флагмана или марафона.</p>
+      <p>Похудение, ягодицы, плоский живот или форма в зале — начните с флагмана или марафона.</p>
     </div>
-    <div class="tabs">
-      <button class="tab active">Все</button>
-      <button class="tab">Похудение</button>
-      <button class="tab">Ягодицы</button>
-      <button class="tab">После родов</button>
-    </div>
-    <div class="cards" id="cards"><!-- заполняется из JS --></div>
+    <h3 class="cat-title">Тренировки дома</h3>
+    <div class="cards" id="cards"><!-- JS --></div>
   </div>
 </section>
 
 <!-- ЭКРАН 3: ФОРМА ЗАЯВКИ -->
-<section class="cta-section" id="lead">
+<section class="block lead" id="lead">
   <div class="wrap">
-    <div class="cta-box">
-      <div class="cta-info">
-        <h2>Не знаете, с чего начать?</h2>
+    <div class="lead-box">
+      <div class="lead-info">
+        <h2>Не знаете, <b>с чего начать?</b></h2>
         <p>Оставьте заявку — подберём программу под вашу цель и уровень. Это бесплатно и займёт пару минут.</p>
-        <ul class="cta-list">
+        <ul class="lead-list">
           <li><span class="ic">✓</span> Разбор вашей цели и текущей формы</li>
           <li><span class="ic">✓</span> Персональная подборка программы</li>
           <li><span class="ic">✓</span> Специальная цена для новых участниц</li>
@@ -333,7 +265,7 @@
       <div class="form-card">
         <form id="leadForm" novalidate>
           <h3>Подобрать программу</h3>
-          <p class="sub">Ответим в течение 15 минут в рабочее время.</p>
+          <p class="fsub">Ответим в течение 15 минут в рабочее время.</p>
 
           <div class="field" id="f-name">
             <label for="name">Как вас зовут?</label>
@@ -353,7 +285,8 @@
               <option value="">Выберите цель</option>
               <option>Похудеть</option>
               <option>Подтянуть фигуру</option>
-              <option>Ягодицы / попа</option>
+              <option>Упругая попа</option>
+              <option>Плоский живот</option>
               <option>Восстановиться после родов</option>
               <option>Набрать форму в зале</option>
             </select>
@@ -371,7 +304,7 @@
           <div class="check">✓</div>
           <h3>Заявка отправлена!</h3>
           <p id="okText">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
-          <button class="btn btn-ghost btn-block" style="margin-top:22px" id="resetForm">Отправить ещё одну</button>
+          <button class="btn btn-light btn-block" style="margin-top:24px" id="resetForm">Отправить ещё одну</button>
         </div>
       </div>
     </div>
@@ -388,7 +321,7 @@
       <a href="#">Оферта</a>
       <a href="#">Политика конфиденциальности</a>
     </div>
-    <p>© ООО «Онлайн Фитнес», 2020–2026. Демо-реплика для тестового задания.</p>
+    <p>© ООО «Онлайн Фитнес», 2020–2026. Демо-реплика 3 экранов для тестового задания.</p>
   </div>
 </footer>
 
@@ -397,11 +330,13 @@
   <div class="modal-bg" data-close></div>
   <div class="modal-card">
     <button class="modal-close" data-close aria-label="Закрыть">✕</button>
-    <div class="modal-emoji" id="mEmoji">🔥</div>
-    <h3 id="mTitle">Программа</h3>
-    <div class="mprice" id="mPrice"></div>
-    <div class="mdesc" id="mDesc"></div>
-    <a href="#lead" class="btn btn-primary btn-block" data-close data-scroll>Оставить заявку</a>
+    <div class="modal-media" id="mMedia"><img id="mImg" src="" alt=""></div>
+    <div class="modal-body">
+      <div class="mcat" id="mCat"></div>
+      <h3 id="mName">Программа</h3>
+      <div class="mdesc" id="mDesc"></div>
+      <a href="#lead" class="btn btn-primary btn-block" data-close data-scroll>Оставить заявку</a>
+    </div>
   </div>
 </div>
 
@@ -409,163 +344,118 @@
 (function(){
   "use strict";
 
-  /* ---------- Данные программ ---------- */
   var PROGRAMS = [
-    {emoji:"🥇", title:"Метод Усмановой", desc:"Освоите технику и втянетесь в регулярные тренировки с нуля.", price:"2 490 ₽", old:"4 990 ₽", flag:"Флагман", hot:true},
-    {emoji:"⚡", title:"Марафон Стройности", desc:"Первый видимый результат уже за 21 день.", price:"1 490 ₽", old:"2 990 ₽"},
-    {emoji:"🍑", title:"Упругая попа 2.0", desc:"Плотные, упругие ягодицы — следующий уровень.", price:"1 990 ₽", old:"3 490 ₽"},
-    {emoji:"🔥", title:"Плоский живот", desc:"Убрать вываливающийся живот и укрепить пресс.", price:"1 490 ₽", old:"2 490 ₽"},
-    {emoji:"🤰", title:"После родов", desc:"Вернётесь в форму после родов и кесарева бережно.", price:"1 990 ₽", old:"3 990 ₽"},
-    {emoji:"🥗", title:"ИИ-нутрициолог", desc:"Едите без срывов и понимаете своё тело.", price:"990 ₽", old:"1 990 ₽", flag:"Бестселлер", hot:true}
+    {img:"prog1.png", cat:"Метод", name:"Метод Усмановой", link:"method.html",
+     desc:"<b>Освоите технику и втянетесь в регулярные тренировки</b> — без травм и через силу. Первая программа, с которой начинают все ученицы Кати.", flag:"Флагман", hot:true},
+    {img:"prog2.png", cat:"Марафон", name:"Марафон Стройности", grad:"linear-gradient(160deg,#e9e6ff,#c3b6ff)",
+     desc:"<b>Первый видимый результат за 21 день</b> — уходит первый жир, появляется тонус и лёгкость. Для тех, кто стартует с нуля."},
+    {img:"prog3.png", cat:"Марафон", name:"Упругая попа 1.0", grad:"linear-gradient(160deg,#ffe9dc,#ffc9a6)",
+     desc:"<b>Первый объём и подтянутость ягодиц</b> — с собственным весом. Для тех, кто впервые целенаправленно работает над попой."},
+    {img:"prog4.png", cat:"Марафон", name:"Упругая попа 2.0", grad:"linear-gradient(160deg,#dff3ea,#a8e6cd)",
+     desc:"<b>Плотные, упругие ягодицы</b> — следующий уровень после 1.0. С резинкой и утяжелителями, для подготовленных."},
+    {img:"prog5.png", cat:"Марафон", name:"Плоский живот", grad:"linear-gradient(160deg,#ffe0e0,#ffb3b8)",
+     desc:"<b>Убрать вываливающийся живот</b>, который не уходит даже после похудения. Тренировки на глубокие мышцы пресса — а не на «кубики»."},
+    {img:"prog6.png", cat:"Курс", name:"Жиросжигающий", grad:"linear-gradient(160deg,#dcecff,#aecdff)",
+     desc:"<b>Сжечь жир и проявить рельеф — за 6 недель.</b> Для тех, кто уже тренировался: с гантелями, по схеме интервальных нагрузок.", flag:"Хит", hot:true}
   ];
 
   var cards = document.getElementById('cards');
-  PROGRAMS.forEach(function(p, i){
+  PROGRAMS.forEach(function(p,i){
     var flag = p.flag ? '<span class="card-flag'+(p.hot?' hot':'')+'">'+p.flag+'</span>' : '';
+    var action = p.link
+      ? '<a class="btn btn-primary" href="'+p.link+'">Подробнее</a>'
+      : '<button class="btn btn-light" data-prog="'+i+'">Подробнее</button>';
     var el = document.createElement('article');
-    el.className = 'card';
+    el.className='card';
     el.innerHTML =
-      '<div class="card-media">'+flag+'<span>'+p.emoji+'</span></div>'+
+      '<div class="card-media">'+flag+'<img src="assets/img/'+p.img+'" alt="'+p.name+'" loading="lazy"></div>'+
       '<div class="card-body">'+
-        '<h3>'+p.title+'</h3>'+
-        '<p class="desc">'+p.desc+'</p>'+
-        '<div class="card-meta"><div class="price"><s>'+p.old+'</s>'+p.price+'</div></div>'+
-        '<button class="btn btn-ghost" data-prog="'+i+'">Подробнее</button>'+
+        '<div class="card-cat">'+p.cat+'</div>'+
+        '<div class="card-name">'+p.name+'</div>'+
+        '<div class="card-desc">'+p.desc+'</div>'+
+        action+
       '</div>';
     cards.appendChild(el);
   });
 
-  /* ---------- Модалка программы ---------- */
-  var modal = document.getElementById('modal');
+  /* Модалка */
+  var modal=document.getElementById('modal');
   function openModal(i){
-    var p = PROGRAMS[i];
-    document.getElementById('mEmoji').textContent = p.emoji;
-    document.getElementById('mTitle').textContent = p.title;
-    document.getElementById('mPrice').innerHTML = '<s style="color:#b3adb8;font-weight:500;font-size:15px;margin-right:8px">'+p.old+'</s>'+p.price;
-    document.getElementById('mDesc').textContent = p.desc + ' Доступ открывается сразу после оплаты, заниматься можно дома в удобное время.';
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    var p=PROGRAMS[i];
+    document.getElementById('mImg').src='assets/img/'+p.img;
+    document.getElementById('mCat').textContent=p.cat;
+    document.getElementById('mName').textContent=p.name;
+    document.getElementById('mDesc').innerHTML=p.desc+' Доступ открывается сразу после оплаты, заниматься можно дома в удобное время.';
+    modal.classList.add('open');document.body.style.overflow='hidden';
   }
-  function closeModal(){
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('click', function(e){
-    var prog = e.target.closest('[data-prog]');
-    if(prog){ openModal(+prog.getAttribute('data-prog')); return; }
-    if(e.target.closest('[data-close]')){ closeModal(); }
+  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
+  document.addEventListener('click',function(e){
+    var pr=e.target.closest('[data-prog]');
+    if(pr){openModal(+pr.getAttribute('data-prog'));return;}
+    if(e.target.closest('[data-close]'))closeModal();
   });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
 
-  /* ---------- Табы (демо-фильтр) ---------- */
-  document.querySelectorAll('.tab').forEach(function(t){
-    t.addEventListener('click', function(){
-      document.querySelector('.tab.active').classList.remove('active');
-      t.classList.add('active');
-    });
-  });
-
-  /* ---------- Бургер-меню ---------- */
-  var burger = document.getElementById('burger');
-  var mm = document.getElementById('mobileMenu');
-  burger.addEventListener('click', function(){
-    var open = mm.style.display === 'block';
-    mm.style.display = open ? 'none' : 'block';
+  /* Бургер */
+  var mm=document.getElementById('mobileMenu');
+  document.getElementById('burger').addEventListener('click',function(){
+    mm.style.display = mm.style.display==='block' ? 'none' : 'block';
   });
   document.querySelectorAll('[data-close-menu]').forEach(function(a){
-    a.addEventListener('click', function(){ mm.style.display='none'; });
+    a.addEventListener('click',function(){mm.style.display='none';});
   });
 
-  /* ---------- Плавный скролл с учётом шапки ---------- */
+  /* Плавный скролл */
   document.querySelectorAll('[data-scroll]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href');
-      if(id && id.charAt(0)==='#' && id.length>1){
-        var t = document.querySelector(id);
-        if(t){ e.preventDefault(); window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-60, behavior:'smooth'}); }
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');
+      if(id&&id.charAt(0)==='#'&&id.length>1){
+        var t=document.querySelector(id);
+        if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-64,behavior:'smooth'});}
       }
     });
   });
 
-  /* ---------- Маска телефона ---------- */
-  var phone = document.getElementById('phone');
-  phone.addEventListener('input', function(){
-    var d = phone.value.replace(/\D/g,'');
-    if(d.startsWith('8')) d = '7'+d.slice(1);
-    if(d.startsWith('9')) d = '7'+d;
-    d = d.slice(0,11);
-    var out = '+7';
-    if(d.length>1) out += ' ('+d.slice(1,4);
-    if(d.length>=4) out += ') '+d.slice(4,7);
-    if(d.length>=7) out += '-'+d.slice(7,9);
-    if(d.length>=9) out += '-'+d.slice(9,11);
-    phone.value = out;
+  /* Маска телефона */
+  var phone=document.getElementById('phone');
+  phone.addEventListener('input',function(){
+    var d=phone.value.replace(/\D/g,'');
+    if(d.startsWith('8'))d='7'+d.slice(1);
+    if(d.startsWith('9'))d='7'+d;
+    d=d.slice(0,11);
+    var out='+7';
+    if(d.length>1)out+=' ('+d.slice(1,4);
+    if(d.length>=4)out+=') '+d.slice(4,7);
+    if(d.length>=7)out+='-'+d.slice(7,9);
+    if(d.length>=9)out+='-'+d.slice(9,11);
+    phone.value=out;
   });
-  phone.addEventListener('focus', function(){ if(!phone.value) phone.value='+7 '; });
+  phone.addEventListener('focus',function(){if(!phone.value)phone.value='+7 ';});
 
-  /* ---------- Валидация и отправка формы ---------- */
-  var form = document.getElementById('leadForm');
-  var okBox = document.getElementById('formOk');
-
-  function setErr(fieldId, on){
-    var f = document.getElementById(fieldId);
-    f.classList.toggle('invalid', on);
-    var inp = f.querySelector('input,select');
-    if(inp) inp.classList.toggle('err', on);
-  }
-
-  form.addEventListener('submit', function(e){
+  /* Валидация + отправка */
+  var form=document.getElementById('leadForm'),okBox=document.getElementById('formOk');
+  function setErr(id,on){var f=document.getElementById(id);f.classList.toggle('invalid',on);var inp=f.querySelector('input,select');if(inp)inp.classList.toggle('err',on);}
+  form.addEventListener('submit',function(e){
     e.preventDefault();
-    var ok = true;
-    var name = document.getElementById('name').value.trim();
-    var phoneDigits = phone.value.replace(/\D/g,'');
-    var agree = document.getElementById('agree').checked;
-
-    if(name.length < 2){ setErr('f-name', true); ok=false; } else setErr('f-name', false);
-    if(phoneDigits.length !== 11){ setErr('f-phone', true); ok=false; } else setErr('f-phone', false);
-
-    if(!agree){
-      ok=false;
-      var c = form.querySelector('.consent');
-      c.style.color = '#ef4444';
-      c.querySelector('input').style.outline='2px solid #ef4444';
-    }
-
-    if(!ok) return;
-
-    // Имитация отправки заявки (без бэкенда — демо тестового задания)
-    var btn = document.getElementById('submitBtn');
-    btn.textContent = 'Отправляем…';
-    btn.disabled = true;
-
+    var ok=true;
+    var name=document.getElementById('name').value.trim();
+    var pd=phone.value.replace(/\D/g,'');
+    var agree=document.getElementById('agree').checked;
+    if(name.length<2){setErr('f-name',true);ok=false;}else setErr('f-name',false);
+    if(pd.length!==11){setErr('f-phone',true);ok=false;}else setErr('f-phone',false);
+    if(!agree){ok=false;var c=form.querySelector('.consent');c.style.color='#ff4d4d';c.querySelector('input').style.outline='2px solid #ff4d4d';}
+    if(!ok)return;
+    var btn=document.getElementById('submitBtn');btn.textContent='Отправляем…';btn.disabled=true;
     setTimeout(function(){
-      var goal = document.getElementById('goal').value;
-      document.getElementById('okText').textContent =
-        'Спасибо, ' + name + '! Заявка принята' + (goal ? ' по цели «'+goal+'»' : '') + '. Мы позвоним на ' + phone.value + '.';
-      form.style.display = 'none';
-      okBox.style.display = 'block';
-      btn.textContent = 'Получить подбор';
-      btn.disabled = false;
-    }, 700);
+      var goal=document.getElementById('goal').value;
+      document.getElementById('okText').textContent='Спасибо, '+name+'! Заявка принята'+(goal?' по цели «'+goal+'»':'')+'. Мы позвоним на '+phone.value+'.';
+      form.style.display='none';okBox.style.display='block';
+      btn.textContent='Получить подбор';btn.disabled=false;
+    },700);
   });
-
-  // сброс ошибок при вводе
-  ['name','phone'].forEach(function(id){
-    document.getElementById(id).addEventListener('input', function(){
-      setErr('f-'+id, false);
-    });
-  });
-  document.getElementById('agree').addEventListener('change', function(){
-    var c = form.querySelector('.consent');
-    c.style.color=''; this.style.outline='';
-  });
-
-  document.getElementById('resetForm').addEventListener('click', function(){
-    form.reset();
-    form.style.display = 'block';
-    okBox.style.display = 'none';
-  });
-
+  ['name','phone'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){setErr('f-'+id,false);});});
+  document.getElementById('agree').addEventListener('change',function(){var c=form.querySelector('.consent');c.style.color='';this.style.outline='';});
+  document.getElementById('resetForm').addEventListener('click',function(){form.reset();form.style.display='block';okBox.style.display='none';});
 })();
 </script>
 </body>
