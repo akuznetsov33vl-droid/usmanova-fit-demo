@@ -53,6 +53,10 @@ section.block{padding:80px 0}
 .hero{position:relative;background:var(--gray);overflow:hidden}
 .hero.hero-sub{background:#fff}
 .hero.hero-sub .hero-visual::before{background:radial-gradient(closest-side,rgba(246,98,151,.22),rgba(126,162,243,.1) 60%,transparent 72%)}
+/* главный hero: крупнее + засветка ног снизу (нет эффекта «обрубков») */
+.hero:not(.hero-sub) .hero-grid{min-height:660px}
+.hero:not(.hero-sub) .hero-visual img{max-height:700px;-webkit-mask-image:linear-gradient(to bottom,#000 66%,rgba(0,0,0,0) 97%);mask-image:linear-gradient(to bottom,#000 66%,rgba(0,0,0,0) 97%)}
+.hero:not(.hero-sub) .hero-visual::after{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);width:96%;height:210px;z-index:2;pointer-events:none;background:radial-gradient(62% 100% at 50% 100%,rgba(255,255,255,.92),rgba(243,243,243,.55) 45%,rgba(243,243,243,0) 74%)}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;min-height:600px;padding:40px 0}
 .hero-copy{position:relative;z-index:2;padding:20px 0}
 .hero h1{font-size:clamp(30px,4.4vw,52px);font-weight:600;line-height:1.09;letter-spacing:-.01em}
@@ -259,6 +263,8 @@ footer .fnav a:hover{color:var(--pink)}
   .hero .sub{align-items:center}.hero-badges{justify-content:center}
   .price-now{justify-content:center}
   .hero-visual{margin-top:16px}.hero-visual img{max-height:420px}
+  .hero:not(.hero-sub) .hero-grid{min-height:0}
+  .hero:not(.hero-sub) .hero-visual img{max-height:460px}
   .online{right:0}
   .back span{display:none}
   section.block{padding:56px 0}
