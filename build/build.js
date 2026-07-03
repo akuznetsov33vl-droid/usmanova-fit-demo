@@ -7,6 +7,9 @@ const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
 
+/* версия ассетов — меняем при правках CSS/JS, чтобы сбросить кэш браузера */
+const VER = '4';
+
 /* ---------- реквизиты ---------- */
 const ORG = {
   name: 'ООО «Онлайн Фитнес»',
@@ -17,8 +20,8 @@ const ORG = {
 };
 
 /* ---------- логотипы рассрочки (круглые) ---------- */
-const LOGO_TBANK = `<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="48" r="48" fill="#FFDD2D"/><path d="M30 27 H66 V43 C66 58 57.5 67 48 71 C38.5 67 30 58 30 43 Z" fill="#fff"/><text x="48" y="45" fill="#111" font-family="Gilroy,Arial,sans-serif" font-weight="700" font-size="24" text-anchor="middle" dominant-baseline="central">Т</text></svg>`;
-const LOGO_DOLYAMI = `<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="48" r="48" fill="#111"/><g fill="#fff"><rect x="30" y="34" width="6" height="28" rx="3"/><rect x="40" y="34" width="6" height="28" rx="3"/><rect x="50" y="34" width="6" height="28" rx="3"/><rect x="60" y="34" width="6" height="28" rx="3"/></g></svg>`;
+const LOGO_TBANK = `<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="48" r="48" fill="#FFDD2D"/><path d="M30 27 H66 V43 C66 58 57.5 67 48 71 C38.5 67 30 58 30 43 Z" fill="#fff"/><text x="48" y="45" fill="#111" font-family="Gilroy,Arial,sans-serif" font-weight="700" font-size="24" text-anchor="middle" dominant-baseline="central">Т</text></svg>`;
+const LOGO_DOLYAMI = `<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="48" r="48" fill="#111"/><g fill="#fff"><rect x="30" y="34" width="6" height="28" rx="3"/><rect x="40" y="34" width="6" height="28" rx="3"/><rect x="50" y="34" width="6" height="28" rx="3"/><rect x="60" y="34" width="6" height="28" rx="3"/></g></svg>`;
 const num = s => parseInt(String(s).replace(/\D/g,''),10) || 0;
 const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ');
 
@@ -195,7 +198,7 @@ const head = (title, desc) => `<!DOCTYPE html>
 <title>${title}</title>
 <meta name="description" content="${desc}">
 <link rel="preload" href="assets/fonts/g2.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=${VER}">
 </head>
 <body>`;
 
@@ -361,7 +364,7 @@ const cookie = () => `
   <button class="btn btn-primary" id="cookieOk">Принять</button>
 </div>`;
 
-const scripts = () => `<script src="assets/app.js"></script>`;
+const scripts = () => `<script src="assets/app.js?v=${VER}"></script>`;
 
 /* ================= program page ================= */
 function programPage(p){
