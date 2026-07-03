@@ -16,24 +16,11 @@ const ORG = {
   years: '2020 — 2026'
 };
 
-/* ---------- круглые логотипы банков/оплаты ---------- */
-function chip(bg, label, fg, fs){
-  return `<div class="bank" title="${label}"><svg viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">`
-    + `<circle cx="33" cy="33" r="33" fill="${bg}"/>`
-    + `<text x="33" y="34" fill="${fg}" font-family="Gilroy,Arial,sans-serif" font-weight="700" font-size="${fs}" text-anchor="middle" dominant-baseline="central">${label}</text>`
-    + `</svg></div>`;
-}
-const BANKS = [
-  chip('#0F9D58','Мир','#fff',16),
-  `<div class="bank" title="СБП"><svg viewBox="0 0 66 66"><circle cx="33" cy="33" r="33" fill="#141414"/><text x="33" y="34" fill="#fff" font-family="Gilroy,Arial" font-weight="700" font-size="16" text-anchor="middle" dominant-baseline="central">СБП</text></svg></div>`,
-  chip('#1A1F71','VISA','#fff',15),
-  `<div class="bank" title="Mastercard"><svg viewBox="0 0 66 66"><circle cx="33" cy="33" r="33" fill="#fff" stroke="#eee"/><circle cx="27" cy="33" r="13" fill="#EB001B"/><circle cx="39" cy="33" r="13" fill="#F79E1B" fill-opacity="0.9"/></svg></div>`,
-  chip('#21A038','Сбер','#fff',15),
-  chip('#FFDD2D','Т','#111',28),
-  chip('#EF3124','А','#fff',28),
-  chip('#009FDF','ВТБ','#fff',15),
-  chip('#6A5CFF','Долями','#fff',11)
-];
+/* ---------- логотипы рассрочки (круглые) ---------- */
+const LOGO_TBANK = `<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="48" r="48" fill="#FFDD2D"/><path d="M30 27 H66 V43 C66 58 57.5 67 48 71 C38.5 67 30 58 30 43 Z" fill="#fff"/><text x="48" y="45" fill="#111" font-family="Gilroy,Arial,sans-serif" font-weight="700" font-size="24" text-anchor="middle" dominant-baseline="central">Т</text></svg>`;
+const LOGO_DOLYAMI = `<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="48" r="48" fill="#111"/><g fill="#fff"><rect x="30" y="34" width="6" height="28" rx="3"/><rect x="40" y="34" width="6" height="28" rx="3"/><rect x="50" y="34" width="6" height="28" rx="3"/><rect x="60" y="34" width="6" height="28" rx="3"/></g></svg>`;
+const num = s => parseInt(String(s).replace(/\D/g,''),10) || 0;
+const fmt = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ');
 
 /* ---------- кейсы (реальные истории учениц) ---------- */
 const CASES = [
@@ -273,19 +260,28 @@ const compareSection = () => `
   </div>
 </section>`;
 
-const paymentSection = () => `
+const paymentSection = (base) => {
+  const m6 = Math.round(base/6), d4 = Math.round(base/4);
+  return `
 <section class="block">
   <div class="wrap">
-    <div class="pay-box">
-      <h2>Удобная оплата и рассрочка</h2>
-      <p>Оплатите картой, через СБП или разбейте платёж на части — без переплат. Доступ открывается сразу после оплаты.</p>
-      <div class="banks">${BANKS.join('')}</div>
-      <div class="pay-badges">
-        <span>Рассрочка 0%</span><span>Оплата «Долями»</span><span>СБП</span><span>Мир · Visa · Mastercard</span><span>Чек и договор-оферта</span>
+    <div class="head"><h2>Рассрочка без переплат</h2><p>Оформите онлайн за пару минут — платёж частями, без процентов и первого взноса.</p></div>
+    <div class="rass">
+      <div class="rmethod">
+        <div class="rlogo">${LOGO_TBANK}</div>
+        <div class="rname">Рассрочка на 6 месяцев</div>
+        <div class="rterms">от ${fmt(m6)} ₽ × 6 платежей<small>Раз в месяц</small></div>
+      </div>
+      <div class="rmethod">
+        <div class="rlogo">${LOGO_DOLYAMI}</div>
+        <div class="rname">Долями</div>
+        <div class="rterms">от ${fmt(d4)} ₽ × 4 платежа<small>Раз в 2 недели</small></div>
       </div>
     </div>
+    <div class="pay-note">Также можно оплатить сразу — картой <b>Мир · Visa · Mastercard</b> или через <b>СБП</b>. Чек и договор-оферта приходят после оплаты.</div>
   </div>
 </section>`;
+};
 
 const faqSection = () => `
 <section class="block" style="background:var(--gray)">
@@ -372,7 +368,7 @@ function programPage(p){
   return head(`${p.name} — программа Кати Усмановой`, p.lead.slice(0,150))
   + headerSub()
   + `
-<section class="hero">
+<section class="hero hero-sub">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <div class="tagbadge">🔥 Скидка до ${p.disc}% — до конца лета</div>
@@ -405,7 +401,7 @@ function programPage(p){
 </section>`
   + casesSection()
   + compareSection()
-  + paymentSection()
+  + paymentSection(num(p.tariffs[1][2]))
   + `
 <section class="block" id="tariffs">
   <div class="wrap">
@@ -464,7 +460,7 @@ function indexPage(){
   </div>
 </section>`
   + casesSection()
-  + paymentSection()
+  + paymentSection(2490)
   + leadForm(false, 'Не знаете, <b>с чего начать?</b>', 'Оставьте заявку — подберём программу под вашу цель и уровень. Это бесплатно и займёт пару минут.')
   + footer() + cookie()
   + `

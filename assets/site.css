@@ -51,6 +51,8 @@ section.block{padding:80px 0}
 
 /* hero (shared) */
 .hero{position:relative;background:var(--gray);overflow:hidden}
+.hero.hero-sub{background:#fff}
+.hero.hero-sub .hero-visual::before{background:radial-gradient(closest-side,rgba(246,98,151,.22),rgba(126,162,243,.1) 60%,transparent 72%)}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;min-height:600px;padding:40px 0}
 .hero-copy{position:relative;z-index:2;padding:20px 0}
 .hero h1{font-size:clamp(30px,4.4vw,52px);font-weight:600;line-height:1.09;letter-spacing:-.01em}
@@ -90,14 +92,14 @@ section.block{padding:80px 0}
 /* programs cards (index) */
 .cat-title{font-size:clamp(24px,3vw,34px);font-weight:600;margin-bottom:30px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:var(--gray);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;transition:.25s ease}
-.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(0,0,0,.22)}
-.card-media{position:relative;height:290px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:#f3f3f3}
-.card-media::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(120% 90% at 50% 100%,rgba(246,98,151,.1),transparent 70%)}
+.card{background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;transition:.25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(0,0,0,.22);border-color:transparent}
+.card-media{position:relative;height:290px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:#fff}
+.card-media::before{content:"";position:absolute;left:50%;bottom:6px;transform:translateX(-50%);width:70%;height:22px;border-radius:50%;background:rgba(0,0,0,.06);filter:blur(6px);z-index:0}
 .card-media img{position:relative;z-index:1;height:100%;width:auto;object-fit:contain}
 .card-flag{position:absolute;top:16px;left:16px;z-index:2;background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:7px 14px;border-radius:100px}
 .card-flag.hot{background:var(--pink)}
-.card-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1;background:#fff;border:1px solid var(--line);border-top:none;border-radius:0 0 28px 28px;margin:-1px}
+.card-body{padding:22px 26px 26px;display:flex;flex-direction:column;flex:1;background:#fff;border-top:1px solid var(--line)}
 .card-cat{color:var(--muted);font-size:15px;margin-bottom:2px}
 .card-name{font-size:23px;font-weight:600;margin-bottom:12px;line-height:1.1}
 .card-desc{color:#666;font-size:15px;flex:1;line-height:1.45}
@@ -135,16 +137,16 @@ section.block{padding:80px 0}
 .cmp-cell.good{border:1.5px solid var(--pink)}.cmp-cell.good b{color:var(--pink)}
 .cmp-cell .lbl{display:block;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 
-/* payment + banks */
-.pay-box{background:var(--gray);border-radius:30px;padding:48px;text-align:center}
-.pay-box h2{font-size:clamp(24px,3vw,36px);font-weight:600}
-.pay-box p{color:var(--muted);margin:14px auto 0;font-size:17px;max-width:560px;line-height:1.45}
-.banks{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:34px}
-.bank{width:66px;height:66px;border-radius:50%;background:#fff;box-shadow:0 10px 24px -12px rgba(0,0,0,.25);display:grid;place-items:center;transition:.2s}
-.bank:hover{transform:translateY(-4px)}
-.bank svg{width:66px;height:66px}
-.pay-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
-.pay-badges span{background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 18px;font-size:14px;font-weight:600;color:#555}
+/* рассрочка */
+.rass{display:flex;justify-content:center;gap:64px;flex-wrap:wrap}
+.rmethod{text-align:center;max-width:260px}
+.rlogo{width:96px;height:96px;margin:0 auto 18px;border-radius:50%;overflow:hidden;box-shadow:0 14px 30px -14px rgba(0,0,0,.28)}
+.rlogo svg{width:96px;height:96px;display:block}
+.rname{color:var(--pink);font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.rterms{font-size:22px;font-weight:600}
+.rterms small{display:block;color:var(--muted);font-size:14px;font-weight:400;margin-top:4px}
+.pay-note{text-align:center;color:var(--muted);font-size:14px;margin-top:34px}
+.pay-note b{color:#555;font-weight:600}
 
 /* tariffs */
 .tariffs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
@@ -206,8 +208,8 @@ section.block{padding:80px 0}
 .modal-bg{position:absolute;inset:0;background:rgba(26,26,26,.55);backdrop-filter:blur(4px)}
 .modal-card{position:relative;background:#fff;border-radius:28px;max-width:460px;width:100%;overflow:hidden;max-height:94vh;animation:rise .3s cubic-bezier(.2,.9,.3,1)}
 @keyframes rise{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-media{height:230px;display:flex;align-items:flex-end;justify-content:center;position:relative;background:#f3f3f3}
-.modal-media::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 100%,rgba(246,98,151,.12),transparent 70%)}
+.modal-media{height:230px;display:flex;align-items:flex-end;justify-content:center;position:relative;background:#fff}
+.modal-media::before{content:"";position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:60%;height:20px;border-radius:50%;background:rgba(0,0,0,.06);filter:blur(6px)}
 .modal-media img{position:relative;z-index:1;height:100%;width:auto}
 .modal-body{padding:28px 32px 34px}
 .modal-close{position:absolute;top:16px;right:16px;z-index:3;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);font-size:18px;display:grid;place-items:center}
